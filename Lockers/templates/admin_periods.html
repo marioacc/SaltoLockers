@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Administración de lockers | CITA</title>
+    {% include "includeScripts.html" %}
+
+    <script src="{{ STATIC_URL }}js/app/admin_periods.js"></script>
+    <script src="{{ STATIC_URL }}js/app/csrf.js"></script>
+
+  </head>
+
+  <body>
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="#">
+                Administración de Lockers
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+        </ul>
+
+
+    <section class="top-bar-section">
+
+      <ul class="left">
+        <li class="divider"></li>
+        <li class="button-bar" id="lockers">
+          <a href="/Administrador/">Lockers</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="users">
+          <a href="/Usuarios/">Users</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="areas">
+          <a href="/Lockers_Areas/">Areas</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="periodos">
+          <a href="/Periodos/">Periodos</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="historial">
+          <a href="/Historial/">Historial</a>
+        </li>
+          <li class="divider"></li>
+            <li class="button-bar" id="Efectivo">
+          <a href="/Efectivo/">Efectivo</a>
+            <li class="divider"></li>
+
+      </ul>
+        <ul class="right">
+        <li class="button-bar">
+        <a href="/logout/">Logout</a>
+        </li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+    </nav>
+
+    <div class="row">
+    <h3 id="titulo">Periodos</h3>
+    </div>
+
+
+
+    <div class="row">
+        <div class="small-7 columns left-align">
+            <table class="responsive">
+                <thead>
+                  <th>ID</th>
+                  <th>Nombre del Periodo</th>
+                  <th >Fecha de inicio</th>
+                  <th >Hora de inicio</th>
+                  <th >Fecha de termino</th>
+                  <th >Hora de termino</th>
+                </thead>
+                <tbody id="table_body"></tbody>
+            </table>
+        </div>
+        <div class=" small-5 columns right-align">
+            <a    class="success large button radius" onclick="revealCreatePeriodsModal()" >Crear nuevo periodo</a>
+        </div>
+    </div>
+
+
+  <div id="createPeriodsModal" class="reveal-modal tiny"  data-reveal reveal.multiple_opened="true" data-options="close_on_background_click:true">
+    <form id="createPeriodForm" data-abide onsubmit="return false"  >
+        <div class="id">
+
+            <label>Nombre <small>requerido</small>
+              <input type="text" name="nombre" required  >
+            </label>
+            <small class="error">El ID debe ser un numero mayor a 0</small>
+            <div class="row">
+
+                <div class="small-6 columns">
+                   <label>Fecha de inicio <small>requerido</small>
+                        <input type="date" name="startDate" required  >
+                   </label>
+                </div>
+
+                <div class="small-6 columns">
+                   <label>Hora de inicio <small>requerido</small>
+                        <input type="time" name="startTime" required  >
+                   </label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="small-6 columns">
+                   <label>Fecha de termino <small>requerido</small>
+                        <input type="date" name="endDate" required  >
+                   </label>
+                </div>
+
+                <div class="small-6 columns">
+                   <label>Hora de termino <small>requerido</small>
+                        <input type="time" name="endTime" required  >
+                   </label>
+                </div>
+
+            </div>
+
+
+        </div>
+        <button onclick="createPeriod()" >Crear</button>
+
+    </form>
+    <a class="close-reveal-modal" onclick="closeModal()" >&#215;</a>
+  </div>
+
+  <div id="overlappedPeriodModal" class="reveal-modal tiny"  data-reveal data-options="close_on_background_click:true">
+    <div class="text-center" >
+        <p id="overlappedPeriodText" ></p>
+    </div>
+    <a class="close-reveal-modal" onclick="closeModal()" >&#215;</a>
+  </div>
+
+
+
+
+  </body>
+</html>

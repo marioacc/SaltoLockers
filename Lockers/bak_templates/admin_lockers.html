@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    {% include "includeScripts.html" %}
+    {% include "admin_lockersScripts.html" %}
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración de lockers</title>
+  </head>
+  <body>
+    <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+
+      <li class="name">
+        <h1>
+          <a href="#">
+            Administración de Lockers
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+
+
+
+      <ul class="left">
+        <li class="divider"></li>
+        <li class="button-bar" id="lockers">
+          <a href="/Administrador/">Lockers</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="users">
+          <a href="/Usuarios/">Users</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="areas">
+          <a href="/Lockers_Areas/">Areas</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="historial">
+          <a href="/Historial/">Historial</a>
+        </li>
+          <li class="divider"></li>
+      </ul>
+        <ul class="right">
+        <li class="button-bar">
+        <a href="/logout/">Logout</a>
+        </li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+  </nav>
+
+  <div class="row">
+    <h3 id="titulo">Lockers</h3>
+  </div>
+
+  <div class="row">
+
+    <div class="large-9 columns">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre de locker</th>
+              <th width="100">Usuario</th>
+              <th >Estatus</th>
+              <th >Fecha de Inicio</th>
+              <th >Hora de inicio</th>
+              <th >Area</th>
+              <th width="200dp">Habilitar/Inhabilitar</th>
+            </tr>
+          </thead>
+          <tbody id="table_body"></tbody>
+        </table>
+      </div>
+    <div class="small-3 column">
+        <a id="aplicar" onclick="lockerAplicarCambios()" class="success large button radius">Aplicar Cambios</a>
+    </div>
+    </div>
+
+  <div id="states_types" class="reveal-modal tiny" data-reveal>
+  <h3>Escoge el nuevo estado del Locker</h3>
+    <div class="column">
+        <div class="row medium-2 switch round tiny">
+            <input class="" id="CheckBox_Inhabilitated"   onclick="lockerCambiaEstatusInhabilitado('No Disponible')" name="state_types" type="radio">
+            <label   for="CheckBox_Inhabilitated" style=" color:black ">Inhabilitar</label>
+        </div>
+        <div class="row medium-2 switch round tiny">
+            <input  id="CheckBox_Damaged"   onclick="lockerCambiaEstatusInhabilitado('Dañado')" name="state_types" type="radio">
+            <label   for="CheckBox_Damaged" style=" color:black ">Dañado</label>
+        </div>
+        <div class="row medium-2 switch round tiny">
+            <input  id="CheckBox_Dirty"   onclick="lockerCambiaEstatusInhabilitado('Sucio')" name="state_types" type="radio">
+            <label   for="CheckBox_Dirty" style=" color:black ">Sucio</label>
+        </div>
+    </div>
+
+</div>
+
+
+  </div>
+    <script>
+      $(document).foundation();
+
+    </script>
+
+  </body>
+</html>

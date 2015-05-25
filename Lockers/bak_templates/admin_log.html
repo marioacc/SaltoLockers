@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    {% include "includeScripts.html" %}
+    {% include "admin_logScripts.html" %}
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración de lockers</title>
+  </head>
+  <body>
+    <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+
+      <li class="name">
+        <h1>
+          <a href="#">
+            Administración de Lockers
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+
+
+
+      <ul class="left">
+        <li class="divider"></li>
+        <li class="button-bar" id="lockers">
+          <a href="/Administrador/">Lockers</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="users">
+          <a href="/Usuarios/">Users</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="areas">
+          <a href="/Lockers_Areas/">Areas</a>
+        </li>
+          <li class="divider"></li>
+        <li class="button-bar" id="historial">
+          <a href="/Historial/">Historial</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+      </ul>
+        <ul class="right">
+        <li class="button-bar">
+        <a href="/logout/">Logout</a>
+        </li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+  </nav>
+
+  <div class="row">
+    <h3 id="titulo">Historial</h3>
+  </div>
+
+  <div class="row">
+
+    <div class="large-9 columns">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tiempo de inicio</th>
+              <th >Pago total</th>
+              <th >Rate</th>
+              <th >Descuento</th>
+              <th >Tiempo Usado</th>
+              <th >Locker</th>
+              <th >Usuario</th>
+            </tr>
+          </thead>
+          <tbody id="table_body"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+
+
+  </div>
+    <script>
+      $(document).foundation();
+
+    </script>
+
+  </body>
+</html>

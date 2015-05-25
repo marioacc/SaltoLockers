@@ -1,0 +1,152 @@
+{% load i18n %}
+<script type="text/javascript" language="javascript">
+   var fk_area_urls=[];
+   var fk_user_url=[];
+   var cambios_en_estado=[];
+   var id_lockers_cambiados=[];
+   var fk_area_number=0;
+   var fk_user_number=0;
+    /***Add the necessary HTML to the page with the elements of Lockers table
+     * VERIFICAR SI EL CONTENIDO PUESTO EN LA COLUMNA DE HORA ES CORRETO***/
+   $(document).ready(
+    $.getJSON("/Lockers/?format=json", function (data) {
+        var items="";
+        var Estatus="";
+        var user_matricula="";
+        $(data).each(function(index,content){
+            user_matricula=fk_user_search(content.fk_user);
+            $("#titulo").append(user_matricula);
+            items+="<tr id=locker_"+content.locker_id+">";
+            items+="<td>"+content.locker_id+"</td>";
+            items+="<td>"+content.locker_name+"</td>";
+            items+="<td id=fk_user"+fk_user_number+"></td>";
+
+            items+="<td>"+content.locker_status+"</td>";
+            var date=new Date(content.locker_start_time)
+            var d=""+date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
+            items+="<td>"+d+"</td>";
+            items+="<td>"+date.getHours()+":"+date.getMinutes()+"</td>"+"<td id=fk_area"+fk_area_number+"></td>";
+            if (content.locker_status=="Disponible"){
+                Estatus="checked";
+            }
+            else
+                Estatus="unchecked";
+            items+='<td>' +
+                        '<div class="switch round large">' +
+                            '<input class ="switch"id="CheckBox_'+content.locker_id+'" '+Estatus+' onclick="lockerCambiaEstatus('+content.locker_id+',this)" type="checkbox">' +
+                            '<label for="CheckBox_'+content.locker_id+'"></label>' +
+                        '</div>'+
+                    '</td>';
+            fk_user_url.push(content.fk_user);
+            fk_area_urls.push(content.fk_area);
+            fk_area_number++;
+            fk_user_number++;
+            items+="</tr>";
+
+        });
+        (document).getElementById("table_body").innerHTML=items;
+        fk_user_search();
+        fk_area_searh();
+    })
+    );
+
+   /***Esta función va guardando los cambios en el estatus en una variable global***/
+   function lockerCambiaEstatus(row_id,checkbox){
+       var elementos=[];
+       var row=(document).getElementById("locker_"+row_id).cells;
+       var locker=''+row_id;
+       if (id_lockers_cambiados.indexOf(locker) == -1){
+           if(checkbox.checked) {
+               cambios_en_estado.push("Disponible");
+               id_lockers_cambiados.push(locker)
+           }
+           else{
+                id_lockers_cambiados.push(locker);
+                $('#states_types').foundation('reveal', 'open');
+           }
+
+       }
+       else{
+           var index_of_element=id_lockers_cambiados.indexOf(""+row_id);
+           id_lockers_cambiados.splice(index_of_element,1);
+           cambios_en_estado.splice(index_of_element,1);
+       }
+
+
+   }
+
+
+   function lockerCambiaEstatusInhabilitado(estado){
+       cambios_en_estado.push(estado);
+       $('#states_types').foundation('reveal', 'close')
+       $("#CheckBox_Dirty").prop("checked",false);
+       $("#CheckBox_Inhabilitated").prop("checked",false);
+       $("#CheckBox_Damaged").prop("checked",false);
+
+
+   }
+   /***Esta función aplica los cambios realizados en el Estatus del locker,
+    * Realiza un GET a la BD y en el codigo de success realiza un POST cambiando los datos del Estatus***/
+
+
+    function lockerAplicarCambios(){
+    for(var c= 0,actual_locker=0;c<id_lockers_cambiados.length;c++){
+        actual_locker=id_lockers_cambiados[c];
+        (function(actual_locker) { // protects url and actual_fk parameters
+            $.getJSON("/Lockers/"+actual_locker+"/", function (data) {
+                data.locker_status=cambios_en_estado[id_lockers_cambiados.indexOf(actual_locker)];
+                $.ajax({
+                  url: "/Lockers/"+actual_locker+"/",
+                  type: "PUT",
+                  dataType: "json",
+                  data: {"locker_id": data.locker_id,
+                         "locker_name": data.locker_name,
+                          "locker_status": data.locker_status,
+                          "locker_start_time": data.locker_start_time,
+                          "fk_area": data.fk_area,
+                          "fk_user":data.fk_user},
+
+                  success: function (data) {
+                        location.reload(true);
+                  },
+                  error: function(e) {
+                       console.log(e);
+                  }
+                });
+            });
+            })(actual_locker);
+
+    }
+
+   }
+
+   /***This method search the fk_area of Lockers in Area table, and add it to the HTML
+    * It ***/
+
+    function fk_user_search(){
+
+       for (var actual_user=0;actual_user<fk_user_number;actual_user++){
+            url=""+fk_user_url[actual_user]+"?format=json";
+       (function(url,actual_user) { // protects url and actual_user parameters
+            $.getJSON(url, function (data) {
+                $("#fk_user"+actual_user).append(data.user_matricula);
+            });
+            })(url,actual_user);
+
+       }
+
+   }
+
+    function fk_area_searh(){
+       for(var actual_area= 0,url="";actual_area<fk_area_number;actual_area++) {
+           url=""+fk_area_urls[actual_area]+"?format=json";
+           (function(url,actual_area) { // protects url and actual_area parameters
+            $.getJSON(url, function (data) {
+                $("#fk_area"+actual_area).append(data.area_id);
+            });
+            })(url,actual_area);
+       }
+   }
+
+
+</script>

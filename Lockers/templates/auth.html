@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+{% include "includeScripts.html"%}
+
+<title>Log in</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css" />
+</head>
+<body>
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+
+      <li class="name">
+        <h1>
+          <a href="#">
+            Administración de Lockers
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+</nav>
+
+<div class="row">
+
+    <div class="medium-centered column large-6">
+
+        <form action="/login/" method="POST" class="success">
+            {% csrf_token %}
+            {% if next %}
+            <input class="medium-centered" type="hidden" name="next" value="{{ next }}" />
+            {% endif %}
+            <span>Nombre de usuario:</span>
+            <input type="text" name="username" value="{{ username}}" /><br />
+            <span>Contraseña:</span>
+            <input type="password" name="password" value="" /><br />
+
+            <input type="submit" value="Ingresar" class=" medium  button "/>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

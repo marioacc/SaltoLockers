@@ -1,0 +1,49 @@
+<script type="text/javascript" language="javascript">
+    var fk_number=0;
+    var fk_urls
+    $(document).ready(
+    $.getJSON("/Log/?format=json", function (data) {
+        var items="";
+        var date;
+        $(data).each(function(index,content){
+            items+="<tr id=log_"+content.log_id+">";
+            items+="<td>"+content.log_id+"</td>";
+
+            date=new Date(content.log_start_time);
+            date=date.getFullYear()+"/"+date.getMonth()+"/"+
+                    date.getDay()+"/ <br>Hora "+date.getHours()+":"+date.getMinutes();
+            items+="<td>"+date+"</td>";
+            items+="<td>$"+content.log_total_pay+"</td>";
+            items+="<td>"+content.log_rate+"</td>";
+            items+="<td>"+content.log_discount+"</td>";
+            items+="<td>"+content.log_used_time+"</td>";
+            items+="</tr>";
+            (function(content) { // protects url and actual_fk parameters
+            $.getJSON(content.fk_user_id+"?format=json", function (data) {
+                $("#log_"+content.log_id).append("<td>"+data.user_name+"</td>");
+
+            });
+            $.getJSON(content.fk_locker_id+"?format=json", function (data) {
+                $("#log_"+content.log_id).append("<td>"+data.locker_name+"</td>");
+
+            });
+
+            })(content);
+            //fk_urls.push([content.fk_user_id,content.fk_locker_id]);
+
+        });
+        (document).getElementById("table_body").innerHTML=items;
+    })
+    );
+
+    function fk_searh(){
+       for(var actual_fk= 0,url="";actual_fk<fk_number;actual_fk++) {
+           url=""+fk_urls[actual_fk]+"?format=json";
+           (function(url,actual_fk) { // protects url and actual_fk parameters
+            $.getJSON(url, function (data) {
+                $("#fk"+actual_fk).append(data.area_id);
+            });
+            })(url,actual_fk);
+       }
+   }
+</script>

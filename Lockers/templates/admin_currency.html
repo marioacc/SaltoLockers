@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración de lockers</title>
+    {% include "includeScripts.html" %}
+    <script src="{{ STATIC_URL}}js/app/admin_currency.js"></script>
+
+  </head>
+  <body>
+    <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+
+      <li class="name">
+        <h1>
+          <a href="#">
+            Administración de Lockers
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+
+
+
+      <ul class="left">
+        <li class="divider"></li>
+        <li class="button-bar" id="lockers">
+          <a href="/Administrador/">Lockers</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="users">
+          <a href="/Usuarios/">Users</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="areas">
+          <a href="/Lockers_Areas/">Areas</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="periodos">
+          <a href="/Periodos/">Periodos</a>
+        </li>
+        <li class="divider"></li>
+          <li class="divider"></li>
+        <li class="button-bar" id="historial">
+          <a href="/Historial/">Historial</a>
+        </li>
+          <li class="divider"></li>
+            <li class="button-bar" id="Efectivo">
+          <a href="/Efectivo/">Efectivo</a>
+            <li class="divider"></li>
+        </li>
+          <li class="divider"></li>
+      </ul>
+        <ul class="right">
+        <li class="button-bar">
+        <a href="/logout/">Logout</a>
+        </li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+  </nav>
+
+  <div class="row">
+    <h3 id="titulo">Efectivo en Kiosko</h3>
+  </div>
+
+  <div class="row">
+
+    <div >
+        <table class="responsive">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th >Cantidad</th>
+              <th> Total</th>
+            </tr>
+          </thead>
+          <tbody id="table_body_currency"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+    <div >
+        <table class="responsive">
+          <thead>
+            <tr>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="table_body_total"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  <div id="commentsModal" class="reveal-modal" data-reveal data-options="close_on_background_click:false">
+      <h2>Comentarios</h2>
+      <p id="commentsText"></p>
+      <a class="close-reveal-modal" onclick="closeCommentsModal()">&#215;</a>
+  </div>
+
+
+
+  </div>
+    <script>
+      $(document).foundation();
+
+    </script>
+
+  </body>
+</html>
