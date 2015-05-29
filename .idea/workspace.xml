@@ -2,70 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="866131a9-8dcc-45b1-8e82-142693558cae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lockers/templates/admin_currency.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lockers/static/js/app/admin_currency.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lockers/templates/admin_periods.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lockers/static/js/app/admin_periods.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/luishoracio.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/img/.gitkeep" afterPath="$PROJECT_DIR$/Lockers/static/img/.gitkeep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SaltoLockers.iml" afterPath="$PROJECT_DIR$/.idea/SaltoLockers.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socketSender/TrueSocket.py" afterPath="$PROJECT_DIR$/socketSender/TrueSocket.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/__init__.py" afterPath="$PROJECT_DIR$/Lockers/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SaltoLockers/__init__.py" afterPath="$PROJECT_DIR$/SaltoLockers/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socketSender/__init__.py" afterPath="$PROJECT_DIR$/socketSender/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/admin.py" afterPath="$PROJECT_DIR$/Lockers/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/templates/admin_areas.html" afterPath="$PROJECT_DIR$/Lockers/templates/admin_areas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/templates/admin_lockers.html" afterPath="$PROJECT_DIR$/Lockers/templates/admin_lockers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/templates/admin_log.html" afterPath="$PROJECT_DIR$/Lockers/templates/admin_log.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/templates/admin_users.html" afterPath="$PROJECT_DIR$/Lockers/templates/admin_users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/templates/auth.html" afterPath="$PROJECT_DIR$/Lockers/templates/auth.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socketSender/echoServer.py" afterPath="$PROJECT_DIR$/socketSender/echoServer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/vendor/fastclick.js" afterPath="$PROJECT_DIR$/Lockers/static/js/vendor/fastclick.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.abide.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.abide.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.accordion.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.accordion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.alert.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.alert.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.clearing.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.clearing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/css/foundation.css" afterPath="$PROJECT_DIR$/Lockers/static/css/foundation.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.dropdown.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.dropdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.equalizer.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.equalizer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.interchange.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.interchange.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.joyride.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.joyride.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.magellan.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.magellan.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/css/foundation.min.css" afterPath="$PROJECT_DIR$/Lockers/static/css/foundation.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation.min.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.offcanvas.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.offcanvas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.orbit.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.orbit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.reveal.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.reveal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.slider.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.slider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.tab.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.tab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.tooltip.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.tooltip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.topbar.js" afterPath="$PROJECT_DIR$/Lockers/static/js/foundation/foundation.topbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/templates/includeScripts.html" afterPath="$PROJECT_DIR$/Lockers/templates/includeScripts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/vendor/jquery.cookie.js" afterPath="$PROJECT_DIR$/Lockers/static/js/vendor/jquery.cookie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/vendor/jquery.js" afterPath="$PROJECT_DIR$/Lockers/static/js/vendor/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/models.py" afterPath="$PROJECT_DIR$/Lockers/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/vendor/modernizr.js" afterPath="$PROJECT_DIR$/Lockers/static/js/vendor/modernizr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/css/normalize.css" afterPath="$PROJECT_DIR$/Lockers/static/css/normalize.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socketSender/otherSocket.py" afterPath="$PROJECT_DIR$/socketSender/otherSocket.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/vendor/placeholder.js" afterPath="$PROJECT_DIR$/Lockers/static/js/vendor/placeholder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/serializers.py" afterPath="$PROJECT_DIR$/Lockers/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SaltoLockers/settings.py" afterPath="$PROJECT_DIR$/SaltoLockers/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socketSender/testSocket.py" afterPath="$PROJECT_DIR$/socketSender/testSocket.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/tests.py" afterPath="$PROJECT_DIR$/Lockers/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SaltoLockers/urls.py" afterPath="$PROJECT_DIR$/SaltoLockers/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/views.py" afterPath="$PROJECT_DIR$/Lockers/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lockers/static/js/app/admin_currency.js" afterPath="$PROJECT_DIR$/Lockers/static/js/app/admin_currency.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SaltoLockers/wsgi.py" afterPath="$PROJECT_DIR$/SaltoLockers/wsgi.py" />
     </list>
     <ignored path="SaltoLockers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,7 +25,18 @@
     <favorites_list name="SaltoLockers" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="admin_currency.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lockers/static/js/app/admin_currency.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.55932206">
+              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,9 +66,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="128" />
-    <option name="y" value="44" />
-    <option name="width" value="2232" />
+    <option name="x" value="1443" />
+    <option name="y" value="87" />
+    <option name="width" value="963" />
     <option name="height" value="1311" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -144,6 +94,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -160,6 +111,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socketSender" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -209,9 +174,74 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltoLockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lockers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,17 +506,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="128" y="44" width="2232" height="1311" extended-state="0" />
-    <editor active="false" />
+    <frame x="1443" y="87" width="963" height="1311" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2211838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18679549" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26489532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -565,14 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lockers/static/js/app/admin_currency.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24439919">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lockers/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.045824848">
@@ -598,6 +620,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8472505">
           <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lockers/static/js/app/admin_currency.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55932206">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
