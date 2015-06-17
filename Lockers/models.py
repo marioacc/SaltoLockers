@@ -34,7 +34,7 @@ class Lockers(models.Model):
     locker_start_time = models.DateTimeField('%Y-%m-%d %H:%M', null=True, blank=True)
     locker_end_time = models.DateTimeField('%Y-%m-%d %H:%M', null=True, blank=True)
     fk_area = models.ForeignKey('Areas')
-    fk_user = models.ForeignKey('Users', null=True, blank=True)
+    fk_user = models.ForeignKey('Users', null=True)
 
     def __str__(self):
         return self.locker_name
@@ -73,7 +73,7 @@ class Log(models.Model):
     log_total_pay = models.FloatField(default=0, null=True, blank=True)
     log_comments = models.CharField(max_length=150, null=True, blank=True)
     fk_locker_id = models.ForeignKey('Lockers')
-    fk_user_id = models.ForeignKey('Users')
+    fk_user_id = models.ForeignKey('Users', null=True)
 
     def __str__(self):
         return self.fk_locker_id
@@ -82,7 +82,7 @@ class Log(models.Model):
 class Currency(models.Model):
     currency_id = models.AutoField(primary_key=True)
     currency_name = models.CharField(max_length=20, null=False)
-    currency_quantity = models.IntegerField(null=False);
+    currency_quantity = models.IntegerField(null=False)
 
     def __str__(self):
         return self.currency_name

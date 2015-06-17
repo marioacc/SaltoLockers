@@ -22,9 +22,10 @@ var fk_number=0;
         var dateString;
         var timeString;
         var comments;
+        var timeUsed;
 
         $(data).each(function(index,content){
-            dateObj=new Date(content.log_start_time);
+            dateObj=new Date(content.log_timestamp);
             year=dateObj.getFullYear();
             month=dateObj.getMonth()+1;
             day=dateObj.getDate();
@@ -35,9 +36,13 @@ var fk_number=0;
             dateString=day+"/"+month+"/"+year;
             timeString=hour+":"+minutes;
             comments=content.log_comments;
+            timeUsed=content.log_time_charged;
 
             if (comments==null){
                 comments="";
+            }
+            if (timeUsed==null){
+                timeUsed=0;
             }
             items+="<tr id=log_"+content.log_id+">";
             items+="<td>"+content.log_id+"</td>";
@@ -46,8 +51,8 @@ var fk_number=0;
             items+="<td>$"+content.log_total_pay+"</td>";
             items+="<td>"+content.log_rate+"</td>";
             items+="<td >"+content.log_discount+"</td>";
-            items+="<td onclick='showComments(this)'>"+content.log_comments+"</td>";
-            items+="<td>"+content.log_used_time+"</td>";
+            items+="<td onclick='showComments(this)'>"+comments+"</td>";
+            items+="<td>"+timeUsed+"</td>";
             items+="<td id=user_"+content.log_id+"></td>";
             items+="<td id=locker_"+content.log_id+"></td>";
             items+="</tr>";

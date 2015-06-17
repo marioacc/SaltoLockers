@@ -19,7 +19,7 @@ $(document).ready(
         var Estatus="";
         var user_matricula="";
         $(data).each(function(index,content){
-
+            var hourString="";
             items+="<tr id=locker_"+content.locker_id+">";
 
             items+="<td>"+content.locker_id+"</td>";
@@ -30,7 +30,13 @@ $(document).ready(
             var d=""+date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
             items+="<td>"+d+"</td>";
             //This string build the hour column
-            items+="<td>"+date.getHours()+":"+date.getMinutes()+"</td>"+"<td id=fk_area"+fk_area_number+"></td>";
+            if(date.getMinutes()<10){
+                hourString=date.getHours()+":"+date.getMinutes()+"0";
+            }else{
+                hourString=date.getHours()+":"+date.getMinutes();
+            }
+
+            items+="<td>"+hourString+"</td>"+"<td id=fk_area"+fk_area_number+"></td>";
 
             if (content.locker_status=="in_use" || content.locker_status=="available"){
                 Estatus="checked";
@@ -131,10 +137,11 @@ $(document).ready(
    }
 
    /***Esta función aplica los cambios realizados en el Estatus del locker,
-    * Realiza un GET a la BD y en el codigo de success realiza un POST cambiando los datos del Estatus***/
+    * Realiza un GET a la Base de Datos y en el codigo de success realiza un POST cambiando los datos del Estatus***/
 
     function lockerAplicarCambios(){
         var comments="";
+        var userLocker="";
         for(var c= 0,actual_locker=0;c<id_lockers_cambiados.length;c++){
             actual_locker=id_lockers_cambiados[c];
             (function(actual_locker) { // protects url and actual_fk parameters
@@ -149,12 +156,19 @@ $(document).ready(
                         data.locker_status=estado;
                         comments=""
                     }
+
+                    if( data.locker_status=="available" || data.locker_status=="disabled"){
+                        userLocker=""
+                    }else{
+                        userLocker=data.fk_user;
+                    }
                 $.ajax({
                   url: "/Lockers/"+actual_locker+"/",
                   type: "PATCH",
                   dataType: "json",
-                  data: {"locker_status":
-                    data.locker_status},
+                  data: {"locker_status": data.locker_status,
+                      "fk_user":userLocker,
+                    },
                   success: function (data) {
                         //location.reload(true);
                   },
@@ -171,41 +185,66 @@ $(document).ready(
                 if (data.locker_status=="disabled"){
                     timeString="";
                     actualTime=(Math.abs(new Date() - new Date(data.locker_start_time)))/1000;
-                    hours=Math.floor(actualTime,3600);
-                    minutes=Math.floor((actualTime-(hours*3600)),60);
-                    seconds=actualTime-(hours*3600)-minutes*60;
-                    timeString=hours+":"+minutes+":"+seconds;
-
+                    hours=Math.floor(actualTime/3600);
+                    minutes=Math.floor((actualTime-(hours*3600))/60);
+                    seconds=Math.floor(actualTime-(hours*3600)-minutes*60);
+                    timeString=hours+(minutes/60);
+                    timeString=timeString.toFixed(2);
                     time=parseInt(Math.abs((new Date() - new Date(data.locker_start_time)))/(60*1000*60));
 
                 }else {
-                    timeString="00:00:00";
+                    timeString="0";
                 }
-                (function (data){
-                    $.getJSON(data.fk_user+"?format=json", function (dataUser) {
+                (function (data,timeString, comments){
+                    if(data.fk_user != null){
+                        $.getJSON(data.fk_user+"?format=json", function (dataUser) {
 
-                    $.ajax({
-                      url:"/Log/",
-                      type: "POST",
-                      dataType: "json",
-                      data: {"log_total_pay":0,
-                             "log_rate": 0,
-                             "log_discount": dataUser.user_discount,
-                             //"log_start_time":data.locker_start_time,
-                             "log_used_time": timeString,
-                             //"log_comments":comments,
-                             "fk_locker_id": "/Lockers/"+data.locker_id+"/",
-                             "fk_user_id":data.fk_user},
+                            $.ajax({
+                              url:"/Log/",
+                              type: "POST",
+                              dataType: "json",
+                              data: {"log_total_pay":0,
+                                     "log_rate": 0,
+                                     "log_discount": dataUser.user_discount,
+                                     //"log_start_time":data.locker_start_time,
+                                     "log_time_charged": timeString,
+                                     "log_comments":comments,
+                                     "fk_locker_id": "/Lockers/"+data.locker_id+"/",
+                                     "fk_user_id":data.fk_user},
 
-                      success: function (data) {
-                            location.reload(true);
-                      },
-                      error: function(e) {
-                           console.log(e);
-                      }
-                    });
-                });
-                })(data);
+                              success: function (data) {
+                                    //location.reload(true);
+                              },
+                              error: function(e) {
+                                   console.log(e);
+                              }
+                            });
+                        });
+                    }else{
+                        $.ajax({
+                              url:"/Log/",
+                              type: "POST",
+                              dataType: "json",
+                              data: {"log_total_pay":0,
+                                     "log_rate": 0,
+                                     "log_discount": 0.0,
+                                     //"log_start_time":data.locker_start_time,
+                                     "log_time_charged": timeString,
+                                     "log_comments":comments,
+                                     "fk_locker_id": "/Lockers/"+data.locker_id+"/",
+                                     "fk_user_id":""},
+
+                              success: function (data) {
+                                    //location.reload(true);
+                              },
+                              error: function(e) {
+                                   console.log(e);
+                              }
+                            })
+
+                    }
+
+                })(data,timeString,comments);
             });
             })(actual_locker);
     }
@@ -234,12 +273,17 @@ $(document).ready(
     function fk_user_search(){
 
        for(var actual_user= 0,url="";actual_user<fk_user_number;actual_user++) {
-           url=""+fk_user_urls[actual_user]+"?format=json";
+
+           if(fk_user_urls[actual_user]!=null){
+             url=""+fk_user_urls[actual_user]+"?format=json";
            (function(url,actual_user) { // protects url and actual_area parameters
                 $.getJSON(url, function (data) {
                     $("#fk_user"+actual_user).append(data.user_id);
                 });
            })(url,actual_user);
+
+           }
+
 
        }
 
