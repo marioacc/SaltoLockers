@@ -26,7 +26,7 @@ $(document).ready(
             items+="<td>"+content.locker_name+"</td>";
             items+="<td id=fk_user"+fk_user_number+"></td>";
             items+="<td>"+content.locker_status+"</td>";
-            var date=new Date(content.locker_start_time)
+            var date=new Date(content.locker_start_time);
             var d=""+date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
             items+="<td>"+d+"</td>";
             //This string build the hour column
@@ -142,6 +142,7 @@ $(document).ready(
     function lockerAplicarCambios(){
         var comments="";
         var userLocker="";
+        var todayDate=new Date();
         for(var c= 0,actual_locker=0;c<id_lockers_cambiados.length;c++){
             actual_locker=id_lockers_cambiados[c];
             (function(actual_locker) { // protects url and actual_fk parameters
@@ -157,25 +158,28 @@ $(document).ready(
                         comments=""
                     }
 
-                    if( data.locker_status=="available" || data.locker_status=="disabled"){
+                    if( data.locker_status=="available" || data.locker_status=="disabled" || data.fk_user_id==null){
                         userLocker=""
                     }else{
                         userLocker=data.fk_user;
                     }
-                $.ajax({
-                  url: "/Lockers/"+actual_locker+"/",
-                  type: "PATCH",
-                  dataType: "json",
-                  data: {"locker_status": data.locker_status,
-                      "fk_user":userLocker,
-                    },
-                  success: function (data) {
-                        //location.reload(true);
-                  },
-                  error: function(e) {
-                       console.log(e);
-                  }
-                });
+
+                    $.ajax({
+                              url: "/Lockers/"+actual_locker+"/",
+                              type: "PATCH",
+                              dataType: "json",
+                              data: {"locker_status": data.locker_status,
+                                  "fk_user":userLocker,
+                                  "locker_start_time":todayDate.toISOString()
+                                },
+                          success: function (data) {
+                                //location.reload(true);
+                          },
+                          error: function(e) {
+                               console.log(e);
+                          }
+                    });
+
                 var timeString;
                 var actualTime;
                 var hours;

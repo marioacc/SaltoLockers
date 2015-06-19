@@ -63,11 +63,17 @@ var fk_number=0;
                 //$("#locker_"+content.log_id).append(data.locker_name);
                 lockersName[content.log_id]=data.locker_name;
             });
-            $.getJSON(content.fk_user_id+"?format=json", function (data) {
+            if(content.fk_user_id!=null){
+                $.getJSON(content.fk_user_id+"?format=json", function (data) {
                 //$("#log_"+content.log_id).append("<td>"+data.user_id+"</td>");
                 //$("#user_"+content.log_id).append(data.user_id);
                 usersId[content.log_id]=data.user_id;
             });
+            }else{
+
+                usersId[content.log_id]="";
+            }
+
             //fk_urls.push([content.fk_user_id,content.fk_locker_id]);
 
         });

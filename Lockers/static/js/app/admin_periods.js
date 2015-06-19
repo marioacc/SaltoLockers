@@ -93,7 +93,7 @@ function createPeriod(){
                 "period_end_time":period_end_time
             },
             success: function (data) {
-                //location.reload(true);
+                location.reload(true);
             },
             error: function(e) {
                 e.preventDefault();
